@@ -1,0 +1,146 @@
+/*
+ Theme Name:   MILCO Child
+ Theme URI:    https://milco.local
+ Description:  MILCO — Made-in-Lesotho marketplace child theme of Storefront.
+ Author:       MILCO
+ Author URI:   https://milco.local
+ Template:     storefront
+ Version:      1.0.0
+ Text Domain:  milco-child
+*/
+/*file MUST start with the WordPress theme header comment. WP reads it to recognise your theme.  */
+
+/* =========================================================
+   MILCO BRAND TOKENS  (CSS variables — edit only here)
+   ========================================================= */
+   :root {
+    --milco-red:        #E30613;   /* primary — logo cart */
+    --milco-red-dark:   #B7050F;
+    --milco-charcoal:   #1F1F1F;   /* logo "m" */
+    --milco-leaf:       #2F7D32;   /* accent */
+    --milco-cream:      #FAF7F1;   /* page background */
+    --milco-muted:      #6B6B6B;
+    --milco-border:     #E5E0D6;
+    --milco-card:       #FFFFFF;
+  
+    --milco-radius:     8px;
+    --milco-shadow:     0 2px 12px -4px rgba(31,31,31,.10);
+    --milco-shadow-lg:  0 20px 40px -16px rgba(227,6,19,.25);
+  
+    --milco-font-serif: 'Playfair Display', Georgia, serif;
+    --milco-font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* =========================================================
+     GLOBAL TYPE
+     ========================================================= */
+  /* body.theme-storefront {
+    font-family: var(--milco-font-sans);
+    background: var(--milco-cream);
+    color: var(--milco-charcoal);
+    line-height: 1.6;
+  } */
+  body,
+  body.theme-storefront,
+  body.woocommerce,
+  body.woocommerce-page,
+  body.home,
+  body.page,
+  body.archive,
+  body.single {
+      font-family: var(--milco-font-sans);
+      background-color: var(--milco-cream) !important;
+      color: var(--milco-charcoal);
+      line-height: 1.6;
+  }
+  
+  /* Storefront sets a dark background on .hentry and content wrappers */
+  .hentry,
+  .site-content,
+  .content-area,
+  #primary,
+  #content,
+  .entry-content,
+  .woocommerce-page #content,
+  .storefront-full-width-content .entry-content {
+      background-color: var(--milco-cream) !important;
+  }
+  
+  /* WooCommerce main wrapper */
+  .woocommerce,
+  .woocommerce-page {
+      background-color: var(--milco-cream) !important;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--milco-font-serif);
+    letter-spacing: -.01em;
+    color: var(--milco-charcoal);
+  }
+  a { color: var(--milco-red); }
+  a:hover { color: var(--milco-red-dark); }
+  
+  /* =========================================================
+     CONTAINER
+     ========================================================= */
+  .col-full, .woocommerce .col-full {
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+/* =========================
+   WPForms - Notifications Section Styling
+========================= */
+
+/* Make form headings white */
+.notify-form .wpforms-title,
+.notify-form h3 {
+    color: #ffffff !important;
+}
+
+/* Make labels white */
+.notify-form .wpforms-field-label {
+    color: #ffffff !important;
+}
+
+/* Make input text dark (for readability inside white fields) */
+.notify-form input,
+.notify-form textarea {
+    color: #1F1F1F !important;
+    background: #ffffff !important;
+}
+
+/* Placeholder text */
+.notify-form input::placeholder {
+    color: #999;
+}
+
+/* Button styling (MILCO brand) */
+.notify-form .wpforms-submit {
+    background: #E30613 !important;
+    color: #ffffff !important;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.notify-form .wpforms-submit:hover {
+    opacity: 0.9;
+}
+
+/* Inline layout */
+.notify-form .wpforms-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.notify-form .wpforms-field-container {
+    flex: 1;
+}
+
+.notify-form .wpforms-submit-container {
+    margin-top: 0;
+}

@@ -1,0 +1,975 @@
+/* This is where you style WooCommerce visually — buttons,
+ product cards, hero, etc. No plugin needed. */
+
+/* =========================================================
+   MILCO COMPONENT STYLES
+   ========================================================= */
+
+/* ---- Buttons (overrides Storefront + WooCommerce) ---- */
+.button,
+button.button,
+input.button,
+.woocommerce .button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce-page .button {
+    background: var(--milco-red) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: var(--milco-radius);
+    padding: .75rem 1.4rem;
+    font-weight: 600;
+    letter-spacing: .01em;
+    transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+    box-shadow: 0 1px 0 rgba(0,0,0,.04);
+}
+.button:hover,
+.woocommerce .button:hover,
+.woocommerce a.button:hover {
+    background: var(--milco-red-dark) !important;
+    transform: translateY(-1px);
+    box-shadow: var(--milco-shadow);
+}
+.woocommerce .button.alt {
+    background: var(--milco-charcoal) !important;
+}
+
+/* ── Universal Rounded Buttons ───────────────────── */
+.button,
+button,
+input[type="submit"],
+input[type="button"],
+a.button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce .button.alt,
+.woocommerce-page .button,
+/* Gutenberg buttons */
+.wp-block-button__link,
+.wp-element-button,
+/* WPForms */
+.wpforms-submit,
+/* Contact Form 7 */
+.wpcf7-submit,
+/* WooCommerce checkout */
+#place_order,
+.checkout-button,
+.wc-proceed-to-checkout a,
+/* Cart */
+.cart .button,
+.cart input.button {
+    border-radius: 999px !important;
+    padding: 0.75rem 1.6rem !important;
+    font-weight: 600 !important;
+    font-family: var(--milco-font-sans) !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.01em !important;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+/* Primary — red */
+.button,
+a.button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.wp-block-button__link,
+.wpforms-submit,
+.wpcf7-submit,
+#place_order,
+.checkout-button {
+    background: var(--milco-red) !important;
+    color: #fff !important;
+}
+
+/* Hover state */
+.button:hover,
+a.button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.wp-block-button__link:hover,
+.wpforms-submit:hover,
+#place_order:hover {
+    background: var(--milco-red-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(227,6,19,0.3) !important;
+    color: #fff !important;
+}
+
+/* Secondary/outline variant — for "Shop Catalogue" style buttons */
+.wp-block-button.is-style-outline .wp-block-button__link,
+.button.outline,
+a.button.secondary {
+    background: transparent !important;
+    border: 2px solid #fff !important;
+    color: #fff !important;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+    background: rgba(255,255,255,0.15) !important;
+}
+
+/* ---- Site header ---- */
+.site-header {
+    background: #fff !important;
+    border-bottom: 1px solid var(--milco-border);
+    box-shadow: var(--milco-shadow);
+}
+.site-branding .site-title a { color: var(--milco-charcoal); }
+.main-navigation ul li a {
+    color: var(--milco-charcoal) !important;
+    font-weight: 500;
+}
+.main-navigation ul li a:hover { color: var(--milco-red) !important; }
+
+/* ---- Product cards (shop loop) ---- */
+.woocommerce ul.products li.product {
+    background: var(--milco-card);
+    border: 1px solid var(--milco-border);
+    border-radius: var(--milco-radius);
+    padding: 1rem;
+    box-shadow: var(--milco-shadow);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.woocommerce ul.products li.product:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--milco-shadow-lg);
+}
+.woocommerce ul.products li.product img {
+    border-radius: calc(var(--milco-radius) - 2px);
+    margin-bottom: .75rem;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-family: var(--milco-font-serif);
+    font-size: 1.05rem !important;
+    color: var(--milco-charcoal);
+    padding: .25rem 0 !important;
+}
+.woocommerce ul.products li.product .price {
+    color: var(--milco-charcoal) !important;
+    font-weight: 700;
+}
+.woocommerce ul.products li.product .price ins { background: transparent; }
+
+/* ---- "Made in Lesotho" badge (added in functions.php) ---- */
+.milco-badge {
+    display: inline-block;
+    background: var(--milco-leaf);
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-bottom: .5rem;
+}
+
+/* ---- Sale flash ---- */
+.woocommerce span.onsale {
+    background: var(--milco-red) !important;
+    color: #fff !important;
+    border-radius: 999px;
+    min-height: auto;
+    line-height: 1;
+    padding: 6px 12px;
+    font-weight: 600;
+}
+
+/* ---- Single product page ---- */
+.woocommerce div.product .product_title {
+    font-family: var(--milco-font-serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+    color: var(--milco-red) !important;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: var(--milco-cream);
+    border-bottom-color: var(--milco-red);
+}
+
+/* ---- Stock badges ---- */
+.woocommerce .stock.in-stock { color: var(--milco-leaf); font-weight: 600; }
+.woocommerce .stock.out-of-stock { color: var(--milco-red); font-weight: 600; }
+
+/* ---- Cart + checkout ---- */
+.woocommerce-cart table.cart,
+.woocommerce-checkout form.checkout {
+    background: var(--milco-card);
+    border: 1px solid var(--milco-border);
+    border-radius: var(--milco-radius);
+    padding: 1rem;
+}
+.woocommerce-info,
+.woocommerce-message {
+    border-top-color: var(--milco-leaf) !important;
+}
+.woocommerce-info::before,
+.woocommerce-message::before { color: var(--milco-leaf) !important; }
+
+/* ---- "Customers also bought" section heading ---- */
+.related.products > h2,
+.up-sells > h2 {
+    font-family: var(--milco-font-serif);
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--milco-red);
+    display: inline-block;
+    padding-bottom: .25rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ---- MILCO Hero (for the Home page) ---- */
+/* .milco-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background:
+      linear-gradient(135deg, rgba(31,31,31,.75), rgba(183,5,15,.55)),
+      url('../images/hero-lesotho.jpg') center/cover no-repeat;
+    padding: 4rem 1.5rem;
+    border-radius: var(--milco-radius);
+}
+.milco-hero h1 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    max-width: 18ch;
+}
+.milco-hero p {
+    max-width: 50ch;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,.9);
+    margin: 1rem 0 1.5rem;
+}
+.milco-hero .button { font-size: 1rem; padding: .9rem 1.6rem; } */
+
+/* ── Full-width Hero ─────────────────────────────── */
+.milco-hero,
+.wp-block-cover,
+.home .wp-block-cover,
+.woocommerce-page .milco-hero {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 0 !important;
+}
+
+/* If your hero is a Gutenberg Cover block */
+.home .wp-block-cover {
+    min-height: 80vh !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove any top gap between nav and hero */
+.home .entry-content > *:first-child,
+.home .wp-block-cover:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Pull hero content area to full width */
+.home #primary,
+.home #content,
+.home .entry-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+    background: var(--milco-charcoal) !important;
+    color: rgba(255,255,255,.75);
+}
+.site-footer a { color: #fff; }
+
+/* ---- Mobile tweaks ---- */
+@media (max-width: 768px) {
+    .woocommerce ul.products[class*="columns-"] li.product { width: 48%; }
+    .milco-hero { min-height: 55vh; }
+}
+
+/* ── MILCO Trust Bar ─────────────────────────────── */
+.milco-trust-bar {
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 24px 0;
+}
+
+.milco-trust-bar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  gap: 24px;
+}
+
+.milco-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  padding: 0 16px;
+  border-right: 1px solid #e8e8e8;
+}
+
+.milco-trust-item:last-child {
+  border-right: none;
+}
+
+.milco-trust-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: #cc0000;
+}
+
+.milco-trust-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.milco-trust-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.milco-trust-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.milco-trust-text span {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .milco-trust-bar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .milco-trust-item {
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 12px 0;
+    width: 100%;
+  }
+  .milco-trust-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ── MILCO Header / Nav ──────────────────────────── */
+.milco-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.milco-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  gap: 32px;
+}
+
+/* Logo */
+.milco-logo img {
+  height: 48px;
+  width: auto;
+}
+
+.milco-logo__text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-size: 18px;
+  color: #1a1a1a;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.milco-logo__text small {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #666;
+}
+
+/* Nav links */
+.milco-nav {
+  flex: 1;
+}
+
+.milco-nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+}
+
+.milco-nav__list li a {
+  display: block;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.milco-nav__list li a:hover,
+.milco-nav__list li.current-menu-item > a {
+  color: #cc0000;
+}
+
+/* Actions */
+.milco-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.milco-action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1a1a1a;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.milco-action-btn:hover {
+  background: #f5f5f5;
+}
+
+.milco-notif-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #cc0000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ── Restore product grid spacing ─────────────────── */
+.woocommerce ul.products {
+  margin: 0 !important;
+}
+
+.woocommerce ul.products li.product {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Fix content area padding so products don't touch edges */
+.woocommerce-page #primary,
+#primary {
+  padding: 0 1rem;
+}
+
+/* Ensure shop archive has breathing room */
+.woocommerce .woocommerce-products-header,
+.woocommerce-page .woocommerce-products-header {
+  margin-bottom: 1.5rem;
+}
+
+/* New & Subscriptions page — light background matching screenshot 2 */
+.page-template-default .entry-content,
+.woocommerce-page .entry-content {
+  background-color: #F5F0E8 !important;
+  padding: 2rem 0;
+}
+
+/* ── Notifications Dropdown ──────────────────────── */
+.milco-notif-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.milco-notif-dropdown.milco-notif-open {
+  display: block;
+}
+
+.milco-notif-item {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.milco-notif-item:last-child { border-bottom: none; }
+.milco-notif-item:hover { background: #fafafa; }
+
+.milco-notif-order .milco-notif-msg { color: #1a1a1a; font-weight: 600; font-size: 13px; }
+.milco-notif-stock .milco-notif-msg { color: #cc0000; font-weight: 600; font-size: 13px; }
+
+.milco-notif-time {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.milco-notif-loading,
+.milco-notif-empty {
+  padding: 16px;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Hide page title on front page */
+.home .entry-header,
+.home .page-title,
+.home h1.entry-title,
+.front-page .entry-title {
+    display: none !important;
+}
+
+/* ── Footer ─────────────────────────────────────── */
+.site-footer {
+  background: var(--milco-charcoal) !important;
+  color: rgba(255,255,255,0.75);
+  padding: 3rem 0 0;
+}
+
+.milco-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.milco-footer__widgets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.milco-footer__col .widget-title {
+  color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: var(--milco-font-sans) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.milco-footer__col a {
+  color: rgba(255,255,255,0.65) !important;
+  display: block;
+  padding: 3px 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.milco-footer__col a:hover {
+  color: #fff !important;
+}
+
+.milco-footer__col p,
+.milco-footer__col li {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.milco-footer__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.milco-footer__bottom {
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+.milco-footer__bottom p {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ================================================
+   MILCO RESPONSIVE — Mobile & Tablet
+   ================================================ */
+
+/* ── Tablet (max 1024px) ─────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Container padding */
+  .col-full,
+  .woocommerce .col-full,
+  .milco-header__inner,
+  .milco-trust-bar__inner,
+  .milco-footer__inner {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Nav — shrink font slightly */
+  .milco-nav__list li a {
+    padding: 6px 9px;
+    font-size: 13px;
+  }
+
+  /* Products — 2 columns on tablet */
+  .woocommerce ul.products[class*="columns-"] li.product,
+  .woocommerce ul.products li.product {
+    width: calc(50% - 1rem) !important;
+    float: left !important;
+    margin-right: 1rem !important;
+  }
+
+  /* Trust bar — 2x2 grid */
+  .milco-trust-bar__inner {
+    flex-wrap: wrap;
+  }
+  .milco-trust-item {
+    flex: 0 0 calc(50% - 12px);
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 14px 0;
+  }
+  .milco-trust-item:nth-child(odd) {
+    border-right: 1px solid #e8e8e8;
+    padding-right: 16px;
+  }
+  .milco-trust-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  /* Footer grid — 2 columns */
+  .milco-footer__widgets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ── Mobile (max 768px) ──────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ---- Page padding ---- */
+  body {
+    overflow-x: hidden;
+  }
+
+  .col-full,
+  .woocommerce .col-full,
+  .entry-content,
+  #primary,
+  #content,
+  .milco-footer__inner {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ---- Header ---- */
+  .milco-header__inner {
+    flex-wrap: wrap;
+    height: auto !important;
+    padding: 0.75rem 1rem !important;
+    gap: 0 !important;
+    position: relative;
+  }
+
+  .milco-logo {
+    flex: 1;
+  }
+
+  .milco-logo img,
+  .milco-logo-img {
+    height: 40px !important;
+  }
+
+  /* ---- Hamburger toggle button ---- */
+  .milco-menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: #1a1a1a;
+    order: 3;
+  }
+
+  .milco-header__actions {
+    order: 4;
+    gap: 4px;
+  }
+
+  /* ---- Mobile Nav — stacked dropdown ---- */
+  .milco-nav {
+    display: none;
+    width: 100%;
+    order: 5;
+    flex: 0 0 100%;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .milco-nav.milco-nav--open {
+    display: block !important;
+  }
+
+  .milco-nav__list {
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .milco-nav__list li {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .milco-nav__list li:last-child {
+    border-bottom: none;
+  }
+
+  .milco-nav__list li a {
+    display: block !important;
+    padding: 12px 4px !important;
+    font-size: 15px !important;
+    font-weight: 500;
+    color: #1a1a1a !important;
+    width: 100%;
+  }
+
+  .milco-nav__list li a:hover,
+  .milco-nav__list li.current-menu-item > a {
+    color: var(--milco-red) !important;
+    padding-left: 8px !important;
+    transition: padding 0.2s;
+  }
+
+  /* ---- Hero ---- */
+  .milco-hero,
+  .home .wp-block-cover,
+  .wp-block-cover {
+    min-height: 55vh !important;
+    padding: 2rem 1rem !important;
+  }
+
+  .milco-hero h1,
+  .wp-block-cover h1,
+  .wp-block-cover__inner-container h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  .milco-hero p,
+  .wp-block-cover p {
+    font-size: 0.95rem !important;
+  }
+
+  /* ---- Trust bar — single column ---- */
+  .milco-trust-bar__inner {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .milco-trust-item {
+    flex: 1 1 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 14px 0 !important;
+  }
+
+  .milco-trust-item:last-child {
+    border-bottom: none;
+  }
+
+  /* ---- Products — 2 columns ---- */
+  .woocommerce ul.products[class*="columns-"] li.product,
+  .woocommerce ul.products li.product {
+    width: calc(50% - 0.5rem) !important;
+    float: left !important;
+    clear: none !important;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Every even card — right side */
+  .woocommerce ul.products li.product:nth-child(even) {
+    margin-left: 1rem !important;
+  }
+
+  /* Product card text sizing */
+  .woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 0.85rem !important;
+  }
+
+  .woocommerce ul.products li.product .price {
+    font-size: 0.9rem !important;
+  }
+
+  .woocommerce ul.products li.product .button {
+    font-size: 0.8rem !important;
+    padding: 0.6rem 0.8rem !important;
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* ---- Footer ---- */
+  .milco-footer__widgets {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem;
+  }
+
+  .milco-footer__col .widget-title {
+    font-size: 0.9rem !important;
+  }
+
+  /* Footer links — white + underlined */
+  .site-footer a,
+  .milco-footer__col a,
+  .site-footer .widget a,
+  .site-footer ul li a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+  }
+
+  .site-footer a:hover,
+  .milco-footer__col a:hover {
+    color: rgba(255,255,255,0.75) !important;
+  }
+
+  /* ---- Typography ---- */
+  h1 { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; }
+  h2 { font-size: clamp(1.3rem, 5vw, 1.8rem) !important; }
+  h3 { font-size: clamp(1.1rem, 4vw, 1.4rem) !important; }
+
+  /* ---- Gutenberg blocks padding ---- */
+  .wp-block-group,
+  .wp-block-columns,
+  .wp-block-cover__inner-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .wp-block-columns {
+    flex-direction: column !important;
+  }
+
+  .wp-block-column {
+    flex-basis: 100% !important;
+  }
+}
+
+
+/* ── Small mobile (max 480px) ────────────────────── */
+@media (max-width: 480px) {
+
+  .milco-header__inner {
+    padding: 0.65rem 0.75rem !important;
+  }
+
+  /* Tighter product cards */
+  .woocommerce ul.products li.product {
+    padding: 0.65rem !important;
+  }
+
+  .woocommerce ul.products li.product img {
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Footer — stack to 1 column on very small screens */
+  .milco-footer__widgets {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Buttons full width on small screens */
+  .wp-block-button__link {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+/* Hide hamburger on desktop */
+.milco-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .milco-menu-toggle {
+    display: flex !important;
+  }
+}
