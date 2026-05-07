@@ -29,3 +29,6 @@ with buyers nationwide.
 ## Local development
 Requires Local WP. Clone into:
 wp-content/themes/milco-child/
+
+Hosted at: InfinityFree (URL)- https://dash.infinityfree.com/
+Site URL - https://milco.gt.tc/ 
